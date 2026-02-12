@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dukite AI - Calendar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page-main">
+  <div class="app-bg"></div>
+  <div id="loadingOverlay" class="loading-overlay hidden" aria-hidden="true"><div class="loader"></div></div>
+  <div id="toastRoot" class="toast-root" aria-live="polite" aria-atomic="true"></div>
+
+  <header class="navbar glass">
+    <a class="nav-back" href="javascript:history.back()" aria-label="Back">&larr;</a>
+    <a class="logo" href="dashboard.html">Dukite AI</a>
+    <p class="greeting">Welcome, <span id="greetingName">User</span></p>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a class="nav-link" href="dashboard.html">Dashboard</a>
+      <a class="nav-link" href="tasks.html">Tasks</a>
+      <a class="nav-link active" href="calendar.html">Calendar</a>
+      <a class="nav-link" href="settings.html">Settings</a>
+    </nav>
+    <span id="voiceStatus" class="voice-status">Idle</span>
+    <button id="logoutBtn" class="btn btn-danger" type="button">Logout</button>
+  </header>
+
+  <main class="container">
+    <section class="card glass">
+      <div class="calendar-header">
+        <button id="prevMonth" class="icon-btn" type="button" aria-label="Previous Month">&lt;</button>
+        <h1 id="calendarMonth" class="section-title">Month Year</h1>
+        <button id="nextMonth" class="icon-btn" type="button" aria-label="Next Month">&gt;</button>
+      </div>
+      <div id="calendarGrid" class="calendar-grid"></div>
+    </section>
+
+    <section class="card glass">
+      <h2 class="section-title">Tasks For Selected Date</h2>
+      <div id="dateTaskList" class="task-grid"></div>
+    </section>
+  </main>
+
+  <script type="module">
+    import { initApp } from "./js/router.js";
+    initApp("calendar");
+  </script>
+</body>
+</html>
