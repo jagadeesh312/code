@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dukite AI - Analytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-app">
+  <div class="app-gradient"></div>
+  <div id="loadingOverlay" class="loading-overlay hidden" aria-hidden="true"><div class="loader"></div></div>
+  <div id="toastRoot" class="toast-root" aria-live="polite" aria-atomic="true"></div>
+
+  <header class="top-nav glass">
+    <a class="back-btn" href="javascript:history.back()" aria-label="Go back">&larr;</a>
+    <a class="logo" href="dashboard.html">Dukite AI</a>
+    <p class="greeting">Welcome, <span id="userBadge">User</span></p>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a class="nav-link" href="dashboard.html">Dashboard</a>
+      <a class="nav-link" href="tasks.html">Tasks</a>
+      <a class="nav-link" href="calendar.html">Calendar</a>
+      <a class="nav-link is-active" href="analytics.html">Analytics</a>
+      <a class="nav-link" href="settings.html">Settings</a>
+    </nav>
+    <details class="nav-mobile">
+      <summary>Menu</summary>
+      <div class="nav-mobile-panel glass">
+        <a class="nav-link" href="dashboard.html">Dashboard</a>
+        <a class="nav-link" href="tasks.html">Tasks</a>
+        <a class="nav-link" href="calendar.html">Calendar</a>
+        <a class="nav-link is-active" href="analytics.html">Analytics</a>
+        <a class="nav-link" href="settings.html">Settings</a>
+      </div>
+    </details>
+    <span id="voiceStatus" class="voice-chip">Idle</span>
+    <button id="logoutBtn" class="btn btn-danger" type="button">Logout</button>
+  </header>
+
+  <main class="page-wrap fade-in">
+    <section class="stats-grid">
+      <article class="card glass"><p class="stat-label">Total Tasks</p><h3 id="statTotal" class="stat-value">0</h3></article>
+      <article class="card glass"><p class="stat-label">Completed Tasks</p><h3 id="statCompleted" class="stat-value">0</h3></article>
+      <article class="card glass"><p class="stat-label">Pending Tasks</p><h3 id="statPending" class="stat-value">0</h3></article>
+      <article class="card glass"><p class="stat-label">Tasks This Month</p><h3 id="statMonth" class="stat-value">0</h3></article>
+    </section>
+  </main>
+
+  <button id="voiceBtn" class="mic-fab" type="button" aria-label="Start voice"><span></span></button>
+  <script type="module" src="js/pages/analytics.js"></script>
+</body>
+</html>
