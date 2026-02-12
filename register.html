@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dukite AI - Register</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page-auth">
+  <div class="app-bg"></div>
+  <div id="loadingOverlay" class="loading-overlay hidden" aria-hidden="true"><div class="loader"></div></div>
+  <div id="toastRoot" class="toast-root" aria-live="polite" aria-atomic="true"></div>
+
+  <main class="auth-card glass">
+    <p class="brand">Dukite AI</p>
+    <h1 class="auth-title">Register</h1>
+    <p class="auth-copy">Create your account to start managing tasks.</p>
+
+    <div class="auth-tabs">
+      <a class="auth-tab" href="login.html">Login</a>
+      <a class="auth-tab active" href="register.html">Register</a>
+    </div>
+
+    <form id="registerForm" class="form-stack">
+      <label class="field-label" for="registerDisplayName">Display Name</label>
+      <input id="registerDisplayName" class="field-input" type="text" placeholder="Your name" required />
+      <p id="displayNameError" class="field-error" role="alert"></p>
+
+      <label class="field-label" for="registerEmail">Email</label>
+      <input id="registerEmail" class="field-input" type="email" placeholder="you@example.com" required />
+      <p id="emailError" class="field-error" role="alert"></p>
+
+      <label class="field-label" for="registerPassword">Password</label>
+      <input id="registerPassword" class="field-input" type="password" placeholder="Strong password" required />
+      <p id="passwordError" class="field-error" role="alert"></p>
+
+      <button id="registerSubmit" class="btn btn-primary" type="submit">Create Account</button>
+      <p id="authError" class="field-error" role="alert"></p>
+    </form>
+  </main>
+
+  <script type="module">
+    import { initApp } from "./js/router.js";
+    initApp("register");
+  </script>
+</body>
+</html>
