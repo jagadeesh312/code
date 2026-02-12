@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dukite AI - Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page-auth">
+  <div class="app-bg"></div>
+  <div id="loadingOverlay" class="loading-overlay hidden" aria-hidden="true"><div class="loader"></div></div>
+  <div id="toastRoot" class="toast-root" aria-live="polite" aria-atomic="true"></div>
+
+  <main class="auth-card glass">
+    <p class="brand">Dukite AI</p>
+    <h1 class="auth-title">Login</h1>
+    <p class="auth-copy">Access your voice task dashboard.</p>
+
+    <div class="auth-tabs">
+      <a class="auth-tab active" href="login.html">Login</a>
+      <a class="auth-tab" href="register.html">Register</a>
+    </div>
+
+    <form id="loginForm" class="form-stack">
+      <label class="field-label" for="loginEmail">Email</label>
+      <input id="loginEmail" class="field-input" type="email" placeholder="you@example.com" required />
+      <p id="emailError" class="field-error" role="alert"></p>
+
+      <label class="field-label" for="loginPassword">Password</label>
+      <input id="loginPassword" class="field-input" type="password" placeholder="Minimum 6 characters" required />
+      <p id="passwordError" class="field-error" role="alert"></p>
+
+      <button id="loginSubmit" class="btn btn-primary" type="submit">Sign In</button>
+      <p id="authError" class="field-error" role="alert"></p>
+    </form>
+  </main>
+
+  <script type="module">
+    import { initApp } from "./js/router.js";
+    initApp("login");
+  </script>
+</body>
+</html>
